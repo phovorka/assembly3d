@@ -1,0 +1,412 @@
+/*
+div {
+  border: 1px dashed red;
+}
+*/
+
+.assembly-Instruction {
+  font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
+  color: #244376;
+}
+
+
+/* This keeps child nodes hidden while the element loads */
+:not(:defined) > * {
+  display: none;
+}
+
+
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+    max-width: 600px;
+  height: 160px;
+  text-align: center;
+  overflow: hidden;
+  margin: 0px auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.25);
+  border: 2px grey;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.slide-Card {
+  padding:6px ;
+}
+
+.slide-Picture {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.slide-Picture.selected {
+  border: 2px solid #4285f4;
+}
+
+.slide-Picture:focus {
+  outline: none;
+}
+
+.slide-Picture:hover {
+  outline: 2px solid #4285f4;
+}
+
+.slide-Picture:focus-visible {
+  outline: 1px solid #4285f4;
+}
+
+.slide-Describe {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding-top:6px ;
+}
+
+
+
+.header {
+  display: flex;
+  max-width: 600px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top:0px;
+  z-index:2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.arrow-Slide {
+  background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Group%203%20(3).svg?v=1670247507842");
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px solid #ffffff;
+  display: block;
+}
+
+.btn {
+  margin: 2px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0px grey;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.btn-Row {
+  padding: 4px 4px;
+  margin: 10px 10px;
+}
+
+.btn-Row .btn {
+  padding: 6px;
+  margin: 2px;
+  width: 40px;
+  height: 40px;
+}
+
+
+model-viewer {
+  height: 400px;
+  width: 94vw;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #e7e2dd;
+}
+
+.noShow {
+  display: none;
+}
+
+
+.rol {
+  position: absolute;
+  margin: 10px;
+  top: 2px;
+  left: 5px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+}
+
+/* Safari syntax */
+:-webkit-full-screen {
+  background-color: white;
+}
+
+/* IE11 */
+:-ms-fullscreen {
+  background-color: white;
+}
+
+/* Standard syntax */
+:fullscreen {
+  background-color: white;
+}
+.ar {
+  position: absolute;
+  cursor: pointer;
+  right: 7px;
+  top: 250px;
+  z-index: 100;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border: none;
+}
+
+.fullScreen {
+  position: absolute;
+  background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/open_in_full.svg?v=1668446191149");
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  right: 11px;
+  top: 70px;
+  z-index: 100;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+  border: 1px grey;
+  display: block;
+}
+
+.exit-Fullscreen {
+  position: absolute;
+  background-color: white;
+  background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/close_fullscreen.svg?v=1668446190770");
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  right: 10px;
+  top: 70px;
+  z-index: 100;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+  border: 1px grey;
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 4px;
+  top: 4px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1);
+  background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Assembly3d%20(1).svg?v=1671275227588");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+}
+
+.img-Control {
+  position: relative;
+  top: -10px;
+  float: left;
+  height: 140px;
+}
+
+.img-Credentials {
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+  top: 56px;
+  float: right;
+  right: 0px;
+  height: 50px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #dbdbdb;
+}
+
+.show {
+  display: block;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  background-color: transparent;
+}
+
+.bgr {
+  color: white;
+  margin: 5px;
+}
+
+button.menu.btn.collapsible.active {
+  z-index: 2;
+}
+
+
+.progress {
+  position: absolute;
+  width: calc(100% / 3);
+  height: 10px;
+  color: green;
+  box-shadow: 0px 0px 8px 6px rgba(0, 0, 0, 0.25);
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  top: calc(50% - 5px);
+  left: calc(50% - 100% / 6);
+  opacity: 0;
+  transition: opacity 0.3s 0.3s;
+}
+
+.progress.show {
+  transition-delay: 0s;
+  opacity: 1;
+}
+
+.progress > .bar {
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  transform-origin: top left;
+  transform: scaleX(0);
+}
+
+
+
+
+
+.viewer {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+  width: 94vw;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+
+.animation-Toolbar {
+  padding: 6px;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.anim-Range {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.play {
+  position: relative;
+  cursor: pointer;
+  background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/play_arrow.svg?v=1668438444401");
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 26px;
+  height: 26px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.pause {
+  position: relative;
+  cursor: pointer;
+  background-image: url("https://cdn.glitch.global/1540ff5d-0f8c-4dfa-b217-fdbbdafefb7d/pause%20(1).svg?v=1670758874528");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 26px;
+  height: 26px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+select {
+  background-color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  color: white;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  margin: 4px 4px;
+  padding: 5px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  color: white;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  margin: 4px 4px;
+  padding: 8px;
+  border-radius: 14px;
+  width: 130px;
+  
+  text-align: center;
+}
