@@ -1,2 +1,2 @@
-# assembly3d
+# Assembly3d
 Assembly instruction - 3D animation
