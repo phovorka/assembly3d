@@ -7,7 +7,14 @@ div {
 .assembly-Instruction {
   font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
   color: #244376;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+  width: 94vw;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
+
 
 
 /* This keeps child nodes hidden while the element loads */
@@ -15,18 +22,38 @@ div {
   display: none;
 }
 
+.header {
+  display: flex;
+  max-width: 600px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top:0px;
+  z-index:2;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+
+model-viewer {
+  height: 400px;
+  width: 94vw;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #e7e2dd;
+}
 
 .slides {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden; 
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-    max-width: 600px;
+  width: 100%; /* Přizpůsobení šířky podle potřeby */
   height: 160px;
   text-align: center;
-  overflow: hidden;
   margin: 0px auto;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.25);
   border: 2px grey;
@@ -36,6 +63,7 @@ div {
 
 .slide-Card {
   padding:6px ;
+  display: inline-block;
 }
 
 .slide-Picture {
@@ -51,7 +79,6 @@ div {
     display: flex;
     cursor: pointer;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
-
 }
 
 .slide-Picture.selected {
@@ -81,19 +108,6 @@ div {
 }
 
 
-
-.header {
-  display: flex;
-  max-width: 600px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top:0px;
-  z-index:2;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 
 .arrow-Slide {
@@ -135,14 +149,6 @@ div {
   height: 40px;
 }
 
-
-model-viewer {
-  height: 400px;
-  width: 94vw;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #e7e2dd;
-}
 
 .noShow {
   display: none;
@@ -328,19 +334,6 @@ button.menu.btn.collapsible.active {
 }
 
 
-
-
-
-.viewer {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
-  width: 94vw;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-
 .animation-Toolbar {
   padding: 6px;
   box-sizing: border-box;
@@ -397,16 +390,4 @@ select {
   cursor: pointer;
 }
 
-footer {
-  background-color: rgba(0, 0, 0, 0.1);
-  outline: none;
-  color: white;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  margin: 4px 4px;
-  padding: 8px;
-  border-radius: 14px;
-  width: 130px;
-  
-  text-align: center;
-}
+

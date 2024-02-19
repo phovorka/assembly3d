@@ -4,7 +4,8 @@
 const modelViewer = document.querySelector(".model");
 let i;
 
-//--------------------------------------------------------Toggle element
+//--------------------------------------------------------Toggle menu element
+
 const coll = document.querySelector(".collapsible");
 coll.addEventListener("click", function () {
   this.classList.toggle("active");
@@ -16,20 +17,34 @@ coll.addEventListener("click", function () {
   }
 });
 
-//-------------------------------------------------------show menu after launch 3D
+//------------------------------------------------------- Show menu after launch 3D
+
 modelViewer.addEventListener("click", function () {
   const ml = this.querySelector(".drop");
   ml.style.display = "block";
   const showFull = this.querySelector(".fullScreen");
   showFull.style.display = "block";
 });
-//--------------------------------------------------------------------hide progress bar when content loaded
+
+//------------------------------------------------------------- Progress bar
+
+const progress = document.querySelector(".progress");
+const bar = progress.querySelector(".bar");
+
+modelViewer.addEventListener("progress", (event) => {
+  const { totalProgress } = event.detail;
+  progress.classList.toggle("show", totalProgress < 1);
+  bar.style.transform = `scaleX(${totalProgress})`;
+});
+
+//------------------------------------------------------------- Hide progress bar when content loaded
+
 modelViewer.addEventListener("load", function () {
   const progress = this.querySelector(".progress");
   progress.style.display = "none";
 });
 
-//-------------------------------------------------------------fullscreen
+//------------------------------------------------------------- Open fullscreen
 const full = document.querySelector(".fullScreen");
 const exitfull = document.querySelector(".exit-Fullscreen");
 
@@ -48,7 +63,7 @@ function openFullscreen() {
   }
 }
 
-//----------------------------------------------------close fullscreen
+//---------------------------------------------------- Close fullscreen
 function exitFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
@@ -66,7 +81,7 @@ exitfull.addEventListener("click", () => {
   exitfull.style.display = "none";
 });
 
-//----------------------------------------------------Background color
+//---------------------------------------------------- Background color
 const bgG = document.querySelector(".bgGrey");
 bgG.addEventListener("click", () => {
   modelViewer.style.background = "linear-gradient(#ffffff, #ada996)";
@@ -82,7 +97,7 @@ bgB.addEventListener("click", () => {
   modelViewer.style.background = "radial-gradient(circle,rgba(161, 161, 176, 1) 0%,rgba(143, 143, 152, 1) 5%,rgba(0, 0, 0, 1) 100%)";
 });
 
-//-------------------------------------------------------Views
+//------------------------------------------------------- Views
 const views = {
   top: "0deg 0deg 90deg",
   front: "0deg 90deg 0deg",
@@ -107,7 +122,19 @@ addClickListener("right", document.querySelector(".right"));
 addClickListener("back", document.querySelector(".back"));
 addClickListener("iso", document.querySelector(".iso"));
 
-//------------------------------------------------------- play, pause animation
+
+
+// --------------------------------------------------- Close the dropdown if the user clicks outside of it
+document.addEventListener("click", (event) => {
+  if (!event.target.matches(".menu")) {
+    const dropdown = document.querySelector(".content");
+    if ((dropdown.style.display = "block")) {
+      dropdown.style.display = "none";
+    }
+  }
+});
+
+//------------------------------------------------------- Play, pause animation
 
 let playBtn = document.querySelector(".play");
 let pauseBtn = document.querySelector(".pause");
@@ -121,29 +148,7 @@ pauseBtn.addEventListener("click", () => {
 });
 
 
-//----------------------------------progress bar
-const progress = document.querySelector(".progress");
-const bar = progress.querySelector(".bar");
-
-modelViewer.addEventListener("progress", (event) => {
-  const { totalProgress } = event.detail;
-  progress.classList.toggle("show", totalProgress < 1);
-  bar.style.transform = `scaleX(${totalProgress})`;
-});
-
-// ---------------------------------------------------Close the dropdown if the user clicks outside of it
-document.addEventListener("click", (event) => {
-  if (!event.target.matches(".menu")) {
-    const dropdown = document.querySelector(".content");
-    if ((dropdown.style.display = "block")) {
-      dropdown.style.display = "none";
-    }
-  }
-});
-
-
-
-//--------------------------------------------------------------slider animation
+//-------------------------------------------------------------- Animation control
 
 let slider = document.querySelector(".anim-Range");
 slider.max = Math.floor(modelViewer.duration * 100) / 100;
@@ -159,7 +164,7 @@ self.setInterval(() => {
   updateSlider();
 }, 100);
 
-//--------------------------------------------------------------hide animation toolbar when no animation appears
+//-------------------------------------------------------------- Hide animation toolbar when no animation appears
 
 modelViewer.addEventListener("load", () => {
   const animations = modelViewer.availableAnimations;
@@ -174,7 +179,7 @@ modelViewer.addEventListener("load", () => {
 }
 });
 
-// ----------------------------------------------------change model src and zoom on click slide
+// -------------------------------------------------------------- Change model src and zoom by clicking slide
 
 const slides = document.querySelectorAll(".slide-Picture");
 window.switchSrc = (element, source, orbit, target, minOrbit, minFov) => {
@@ -184,14 +189,12 @@ window.switchSrc = (element, source, orbit, target, minOrbit, minFov) => {
   modelViewer.minCameraOrbit = minOrbit;
   modelViewer.minFieldOfView = minFov;
 
-
   slides.forEach((element) => {
     element.classList.remove("selected");
     element.firstChild.nextElementSibling.style.display = "block";
 
   });
   element.classList.add("selected");
-  element.firstChild.nextElementSibling.style.display = "none";
- 
+  element.firstChild.nextElementSibling.style.display = "none"; 
 };
 
