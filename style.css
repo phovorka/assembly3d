@@ -7,7 +7,14 @@ div {
 .assembly-Instruction {
   font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
   color: #244376;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
+  width: 94vw;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
+
 
 
 /* This keeps child nodes hidden while the element loads */
@@ -15,32 +22,78 @@ div {
   display: none;
 }
 
+.header {
+  display: flex;
+  max-width: 600px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top:0px;
+  z-index:2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+model-viewer {
+  height: 400px;
+  width: 94vw;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #e7e2dd;
+}
+
 
 
 .slides {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden; 
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-    max-width: 600px;
+  width: 100%; 
   height: 160px;
   text-align: center;
-  overflow: hidden;
   margin: 0px auto;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.25);
   border: 2px grey;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  
+  
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track
+::-webkit-scrollbar-track {
+
+}
+  */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black; 
 }
 
 .slide-Card {
-  padding:6px ;
+  padding:10px 4px 6px 10px ;
+  display: inline-block;
 }
 
 .slide-Picture {
-    scroll-snap-align: start;
-    flex-shrink: 0;
+    scroll-snap-align: end;
+    /*flex-shrink: 0;*/
     width: 100px;
     height: 100px;
     background-size: cover;
@@ -51,7 +104,6 @@ div {
     display: flex;
     cursor: pointer;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
-
 }
 
 .slide-Picture.selected {
@@ -79,22 +131,6 @@ div {
   justify-content: center;
   padding-top:6px ;
 }
-
-
-
-.header {
-  display: flex;
-  max-width: 600px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top:0px;
-  z-index:2;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 
 .arrow-Slide {
   background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Group%203%20(3).svg?v=1670247507842");
@@ -135,19 +171,9 @@ div {
   height: 40px;
 }
 
-
-model-viewer {
-  height: 400px;
-  width: 94vw;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #e7e2dd;
-}
-
 .noShow {
   display: none;
 }
-
 
 .rol {
   position: absolute;
@@ -173,6 +199,7 @@ model-viewer {
 :fullscreen {
   background-color: white;
 }
+
 .ar {
   position: absolute;
   cursor: pointer;
@@ -193,8 +220,8 @@ model-viewer {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  right: 11px;
-  top: 70px;
+  right: 5px;
+  top: 66px;
   z-index: 100;
   width: 36px;
   height: 36px;
@@ -211,8 +238,8 @@ model-viewer {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  right: 10px;
-  top: 70px;
+  right: 5px;
+  top: 66px;
   z-index: 100;
   width: 36px;
   height: 36px;
@@ -225,8 +252,8 @@ model-viewer {
   position: absolute;
   width: 50px;
   height: 50px;
-  right: 4px;
-  top: 4px;
+  right: 2px;
+  top: 2px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1);
   background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Assembly3d%20(1).svg?v=1671275227588");
   background-size: 30px;
@@ -328,19 +355,6 @@ button.menu.btn.collapsible.active {
 }
 
 
-
-
-
-.viewer {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.25);
-  width: 94vw;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-
 .animation-Toolbar {
   padding: 6px;
   box-sizing: border-box;
@@ -397,16 +411,4 @@ select {
   cursor: pointer;
 }
 
-footer {
-  background-color: rgba(0, 0, 0, 0.1);
-  outline: none;
-  color: white;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  margin: 4px 4px;
-  padding: 8px;
-  border-radius: 14px;
-  width: 130px;
-  
-  text-align: center;
-}
+
