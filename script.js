@@ -175,6 +175,7 @@ modelViewer.addEventListener("load", () => {
 });
 
 // ----------------------------------------------------change model src and zoom on click slide
+
 const slides = document.querySelectorAll(".slide-Picture");
 window.switchSrc = (element, source, orbit, target, minOrbit, minFov) => {
   modelViewer.src = source;
