@@ -44,6 +44,8 @@ model-viewer {
   background-color: #e7e2dd;
 }
 
+
+
 .slides {
   display: flex;
   overflow-x: auto;
@@ -51,7 +53,7 @@ model-viewer {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  width: 100%; /* Přizpůsobení šířky podle potřeby */
+  width: 100%; 
   height: 160px;
   text-align: center;
   margin: 0px auto;
@@ -59,16 +61,39 @@ model-viewer {
   border: 2px grey;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  
+  
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track
+::-webkit-scrollbar-track {
+
+}
+  */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black; 
 }
 
 .slide-Card {
-  padding:6px ;
+  padding:10px 4px 6px 10px ;
   display: inline-block;
 }
 
 .slide-Picture {
-    scroll-snap-align: start;
-    flex-shrink: 0;
+    scroll-snap-align: end;
+    /*flex-shrink: 0;*/
     width: 100px;
     height: 100px;
     background-size: cover;
@@ -106,9 +131,6 @@ model-viewer {
   justify-content: center;
   padding-top:6px ;
 }
-
-
-
 
 .arrow-Slide {
   background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Group%203%20(3).svg?v=1670247507842");
@@ -149,11 +171,9 @@ model-viewer {
   height: 40px;
 }
 
-
 .noShow {
   display: none;
 }
-
 
 .rol {
   position: absolute;
@@ -179,6 +199,7 @@ model-viewer {
 :fullscreen {
   background-color: white;
 }
+
 .ar {
   position: absolute;
   cursor: pointer;
@@ -199,8 +220,8 @@ model-viewer {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  right: 11px;
-  top: 70px;
+  right: 5px;
+  top: 66px;
   z-index: 100;
   width: 36px;
   height: 36px;
@@ -217,8 +238,8 @@ model-viewer {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  right: 10px;
-  top: 70px;
+  right: 5px;
+  top: 66px;
   z-index: 100;
   width: 36px;
   height: 36px;
@@ -231,8 +252,8 @@ model-viewer {
   position: absolute;
   width: 50px;
   height: 50px;
-  right: 4px;
-  top: 4px;
+  right: 2px;
+  top: 2px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1);
   background-image: url("https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Assembly3d%20(1).svg?v=1671275227588");
   background-size: 30px;
