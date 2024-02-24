@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Assembly3D</title>
+    <title>Assembly 3D</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -26,176 +26,164 @@
         <h3>Assembly instruction</h3>
       </div>
 
-          <model-viewer
-          camera-controls
-          enable-pan
-          camera-orbit="54.31deg 66.45deg auto"
-          min-camera-orbit="auto 0deg auto"
-          max-camera-orbit="auto 180deg auto"
-          touch-action="none"
-          class="model"
-          autoplay
-          shadow-intensity="1"
-          src="https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/BEDBlenderNoAnim.glb?v=1664801803206"
-          interaction-prompt="none"
-        >
-          <button class="btn fullScreen" onclick="openFullscreen();"></button>
-          <button
-            class="btn exit-Fullscreen"
-            onclick="exitFullscreen();"
-          ></button>
-          <div class="drop">
-            <button class="menu btn collapsible"></button>
-            <div class="content">
-              <div class="rol">
-                <div class="btn-Row">
-                  <span class="bgr">Background</span>
-                  <br />
-                  <button class="bgWhite btn" style="background-color: white">
-                    white
-                  </button>
-                  <button
-                    class="bgGrey btn"
-                    style="background-color: grey; color: white"
-                  >
-                    CAD
-                  </button>
-                  <button
-                    class="bgBlack btn"
-                    style="background-color: black; color: white"
-                  >
-                    Radial
-                  </button>
-                </div>
-                <div class="btn-Row">
-                  <span class="bgr">View</span>
-                  <br />
-                  <button class="btn top">Top</button>
-                  <button class="btn front">Front</button>
-                  <button class="btn left">Left</button>
-                  <button class="btn right">Right</button>
-                  <button class="btn back">Back</button>
-                  <button class="btn iso">Iso</button>
-                </div>
-                <div class="btn-Row">
-                  <span class="bgr">Control</span>
-                  <br />
+      <model-viewer
+        camera-controls
+        enable-pan
+        camera-orbit="54.31deg 66.45deg auto"
+        min-camera-orbit="auto 0deg auto"
+        max-camera-orbit="auto 180deg auto"
+        touch-action="none"
+        class="model"
+        autoplay
+        shadow-intensity="1"
+        src="https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/BEDBlenderNoAnim.glb?v=1664801803206"
+        interaction-prompt="none"
+      >
+        <button class="btn fullScreen" onclick="openFullscreen();"></button>
+        <button
+          class="btn exit-Fullscreen"
+          onclick="exitFullscreen();"
+        ></button>
+        <div class="drop">
+          <button class="menu btn collapsible"></button>
+          <div class="content">
+            <div class="rol">
+              <div class="btn-Row">
+                <span class="bgr">Background</span>
+                <br />
+                <button class="bgWhite btn" style="background-color: white">
+                  white
+                </button>
+                <button
+                  class="bgGrey btn"
+                  style="background-color: grey; color: white"
+                >
+                  CAD
+                </button>
+                <button
+                  class="bgBlack btn"
+                  style="background-color: black; color: white"
+                >
+                  Radial
+                </button>
+              </div>
+              <div class="btn-Row">
+                <span class="bgr">View</span>
+                <br />
+                <button class="btn top">Top</button>
+                <button class="btn front">Front</button>
+                <button class="btn left">Left</button>
+                <button class="btn right">Right</button>
+                <button class="btn back">Back</button>
+                <button class="btn iso">Iso</button>
+              </div>
+              <div class="btn-Row">
+                <span class="bgr">Control</span>
+                <br />
+                <img
+                  class="img-Control"
+                  src="https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Frame%205%20(2).svg?v=1667387062300"
+                />
+              </div>
+              <div class="credentials">
+                <a href="#">
                   <img
-                    class="img-Control"
-                    src="https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Frame%205%20(2).svg?v=1667387062300"
-                  />
-                </div>
-                <div class="credentials">
-                  <a href="#">
-                    <img
-                      class="img-Credentials"
-                      src="https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Assembly%20(1).svg?v=1672676307347"
-                  /></a>
-                </div>
+                    class="img-Credentials"
+                    src="https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/Assembly%20(1).svg?v=1672676307347"
+                /></a>
               </div>
             </div>
           </div>
-          <div class="animation-Toolbar">
-            <button class="btn play"></button>
-            <button class="btn pause"></button>
-            <input
-              type="range"
-              min="0"
-              value="0"
-              step="0.1"
-              class="anim-Range"
-            />
-          </div>
-          <div class="progress" slot="progress-bar">
-            <div class="bar"></div>
-          </div>
-        </model-viewer>
-
-        <div class="slides">
-          <div class="slide-Card">
-            <button
-              class="slide-Picture"
-              onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/1stAnim.glb?v=1665146322342',
-                         '40deg 70deg 3m','2m 12m 2m','auto auto 30m','20deg')"
-              style="
-                background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/1pic.png?v=1670265590781');
-              "
-            >
-              <span class="arrow-Slide"></span>
-            </button>
-            <small
-              ><span class="slide-Describe">1) Insert wooden pins </span></small
-            >
-          </div>
-
-          <div class="slide-Card">
-            <button
-              class="slide-Picture"
-              onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/2ndAnim.glb?v=1670263260369',
-                         '40deg 70deg 3m','-6m 10m 2m','auto auto 50m','14deg')"
-              style="
-                background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/2pic.png?v=1670265590116');
-              "
-            >
-              <span class="arrow-Slide"></span>
-            </button>
-            <small
-              ><span class="slide-Describe">2) Fasten front plate </span></small
-            >
-          </div>
-          
-                    <div class="slide-Card">
-            <button
-              class="slide-Picture"
-              onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/3rdAnim.glb?v=1670263587579',
-                         '109deg 70deg 3m','-20m 6m -4m','auto auto 55m','21deg')"
-              style="
-                background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/3pic.png?v=1670265587955');
-              "
-            >
-              <span class="arrow-Slide"></span>
-            </button>
-            <small
-              ><span class="slide-Describe">3) Fasten back plate </span></small
-            >
-          </div>
-          
-                    <div class="slide-Card">
-            <button
-              class="slide-Picture"
-              onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/5thAnim.glb?v=1670264284954',
-                         '113deg 75deg 3m','-6m 5m 14m','auto auto 45m','13deg')"
-              style="
-                background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/5pic.png?v=1670265588553');
-              "
-            >
-              <span class="arrow-Slide"></span>
-            </button>
-            <small
-              ><span class="slide-Describe">4) Insert eye screw</span></small
-            >
-          </div>
-          
-                    <div class="slide-Card">
-            <button
-              class="slide-Picture"
-              onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/6thAnim.glb?v=1670264281829',
-                         '118deg 65deg 3m','3m 7m 14m','auto auto 30m','13deg')"
-              style="
-                background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/6pic.png?v=1670265587394');
-              "
-            >
-              <span class="arrow-Slide"></span>
-            </button>
-            <small
-              ><span class="slide-Describe">5) Fasten base plate </span></small
-            >
-          </div>
-          
-    
-          
         </div>
-    
+        <div class="animation-Toolbar">
+          <button class="btn play"></button>
+          <button class="btn pause"></button>
+          <input type="range" min="0" value="0" step="0.1" class="anim-Range" />
+        </div>
+        <div class="progress" slot="progress-bar">
+          <div class="bar"></div>
+        </div>
+      </model-viewer>
+
+      <div class="slides">
+        <div class="slide-Card">
+          <button
+            class="slide-Picture"
+            onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/1stAnim.glb?v=1665146322342',
+                         '40deg 70deg 3m','2m 12m 2m','auto auto 30m','20deg')"
+            style="
+              background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/1pic.png?v=1670265590781');
+            "
+          >
+            <span class="arrow-Slide"></span>
+          </button>
+          <small
+            ><span class="slide-Describe">1) Insert wooden pins </span></small
+          >
+        </div>
+
+        <div class="slide-Card">
+          <button
+            class="slide-Picture"
+            onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/2ndAnim.glb?v=1670263260369',
+                         '40deg 70deg 3m','-6m 10m 2m','auto auto 50m','14deg')"
+            style="
+              background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/2pic.png?v=1670265590116');
+            "
+          >
+            <span class="arrow-Slide"></span>
+          </button>
+          <small
+            ><span class="slide-Describe">2) Fasten front plate </span></small
+          >
+        </div>
+
+        <div class="slide-Card">
+          <button
+            class="slide-Picture"
+            onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/3rdAnim.glb?v=1670263587579',
+                         '109deg 70deg 3m','-20m 6m -4m','auto auto 55m','21deg')"
+            style="
+              background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/3pic.png?v=1670265587955');
+            "
+          >
+            <span class="arrow-Slide"></span>
+          </button>
+          <small
+            ><span class="slide-Describe">3) Fasten back plate </span></small
+          >
+        </div>
+
+        <div class="slide-Card">
+          <button
+            class="slide-Picture"
+            onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/5thAnim.glb?v=1670264284954',
+                         '113deg 75deg 3m','-6m 5m 14m','auto auto 45m','13deg')"
+            style="
+              background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/5pic.png?v=1670265588553');
+            "
+          >
+            <span class="arrow-Slide"></span>
+          </button>
+          <small><span class="slide-Describe">4) Insert eye screw</span></small>
+        </div>
+
+        <div class="slide-Card">
+          <button
+            class="slide-Picture"
+            onclick="switchSrc(this, 'https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/6thAnim.glb?v=1670264281829',
+                         '118deg 65deg 3m','3m 7m 14m','auto auto 30m','13deg')"
+            style="
+              background-image: url('https://cdn.glitch.global/82e9051b-34b9-4596-8cb8-f6f8421193ef/6pic.png?v=1670265587394');
+            "
+          >
+            <span class="arrow-Slide"></span>
+          </button>
+          <small
+            ><span class="slide-Describe">5) Fasten base plate </span></small
+          >
+        </div>
+      </div>
     </div>
   </body>
 </html>
